@@ -15,15 +15,20 @@ const router = createRouter({
     {
       path: "/home",
       component: () => import("../pages/home/index.vue"),
-      redirect: '/home/dashboard',
+      redirect: "/home/dashboard",
       children: [
         {
-          path: 'dashboard',
-          name: 'Dashboard',
-          component: () => import('../pages/dashboard/index.vue'),
-          meta: { title: '仪表盘', icon: 'DashboardOutlined' }
+          path: "dashboard",
+          name: "Dashboard",
+          component: () => import("../pages/dashboard/index.vue"),
+          meta: { title: "仪表盘", icon: "DashboardOutlined" }
         },
-        { path: "/info", component: () => import("../pages/login/index.vue") },
+        {
+          path: "info",
+          name: "Info",
+          component: () => import("../pages/login/index.vue"),
+          meta: { title: "个人信息" }
+        },
         {
           path: "permission",
           name: "Permission",
@@ -50,7 +55,7 @@ const router = createRouter({
           ],
         },
       ]
-    },
+    }
 
   ],
 });
