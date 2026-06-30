@@ -18,6 +18,7 @@ export default defineConfig({
       logger: true, // 控制台打印请求日志
     }),
   ],
+  base: "/easy_admin/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
